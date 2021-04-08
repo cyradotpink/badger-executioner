@@ -1,0 +1,7 @@
+node-modules
+node-modules/**
+package-lock.json
+examples
+examples/**
+translate-api
+translate-api/**
