@@ -1,4 +1,4 @@
-const TranslateApi = require('../../translate-api')
+const TranslateApi = require('translate-api')
 const process = require('process')
 const fs = require('fs')
 

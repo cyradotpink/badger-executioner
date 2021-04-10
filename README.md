@@ -28,21 +28,25 @@ const batchExecuter = new BatchExecuter('translate.google.com')
 The class has two instance functions, `execute` and `executeOne`.\
 `executeOne` is the simplest way to use this module and takes two arguments,
 the function ID and the non-serialised JSON payload. It returns a promise which resolves to the return value of the execution.\
-In this example, we use Google Translate's text-to-speech feature to read the string `"le french has arrived"` in a computer's approximation
+In this example,
+([Full script](/examples/badger-executioner/execute-one.js))
+we use Google Translate's text-to-speech feature to read the string `"le french has arrived"` in a computer's approximation
 of a french accent, and save the resulting mp3 as a file using `fs`:
 ```js
 var functionId = 'jQ1olc'
 var payload = ['le french has arrived', 'fr', null, 'null']
 batchExecuter.executeOne(functionId, payload).then(returnValue => {
-    fs.writeFile('french.mp3', Buffer.from(returnValue[0], 'base64'))
+    fs.writeFile('french.mp3', Buffer.from(returnValue[0], 'base64'), () => {})
 })
 ```
 
 To leverage batchexecute's ability to execute multiple things in a single request, you may use the `execute` function.\
 It takes one argument, an array of arrays, where those arrays are pairs of function IDs and payloads. The returned promise resolves to an array of objects
 with the keys `index`, `functionId`, `payload` and `returnValue`, where `index` just reflects the index of the function call in the originally passed-in array
-that the result belongs to, `functionId` and `payload` are just the function ID and payload that resulted in the result, and `returnValue` is the actual returned value from the API.\
-The following example is similar to the last, but it text-to-speaks the string `"FORTNITE FAILS & Epic Wins! #178​ (Fortnite Battle Royale Funny Moments)"` in both a German and an Italian accent. (And saves both resulting mp3s)
+that the result belongs to, `functionId` and `payload` are the function ID and payload that produced the result, and `returnValue` is the actual returned value from the API.\
+The following example
+([Full script](/examples/badger-executioner/execute-multiple.js))
+is similar to the last, but it text-to-speaks the string `"FORTNITE FAILS & Epic Wins! #178​ (Fortnite Battle Royale Funny Moments)"` in both a German and an Italian accent. (And saves both resulting mp3s)
 ```js
 var functionId = 'jQ1olc'
 var textToSpeak = 'FORTNITE FAILS & Epic Wins! #178​ (Fortnite Battle Royale Funny Moments)'
@@ -52,7 +56,7 @@ var functionCalls = [
 ]
 batchExecuter.execute(functionCalls).then(results => {
     results.forEach(result => {
-        fs.writeFile(`fortnite${result.index}.mp3`, Buffer.from(result.returnValue[0], 'base64'))
+        fs.writeFile(`fortnite${result.index}.mp3`, Buffer.from(result.returnValue[0], 'base64'), () => {})
     })
 })
 ```

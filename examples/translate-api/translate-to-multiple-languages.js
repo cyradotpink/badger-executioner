@@ -1,4 +1,4 @@
-const TranslateApi = require('../../translate-api')
+const TranslateApi = require('translate-api')
 const process = require('process')
 
 /*
@@ -15,8 +15,11 @@ const main = async() => {
     var outLanguages = process.argv[3].split(',')
     var input = process.argv[4]
 
+    // Causes getTranslation to return a [functionId, payload] pair instead of executing immediately
     translateApi.defaultNoExec = true
-    const results = await translateApi.multiExec(
+
+    // Now we can use multiExec to execute multiple translations in the same request
+    var results = await translateApi.multiExec(
         outLanguages.map(outLang => translateApi.getTranslation(input, inLanguage, outLang))
     )
     console.log(results)

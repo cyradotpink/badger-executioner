@@ -1,0 +1,18 @@
+{
+    "name": "badger-executioner-examples",
+    "version": "0.0.1",
+    "description": "Usage examples for badger-executioner and translate-api",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Simon Paul",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SimonAlexPaul/badger-executioner"
+    },
+    "dependencies": {
+        "badger-executioner": "https://github.com/SimonAlexPaul/badger-executioner/blob/main/badger-executioner/release/v0_0_1.tar.gz?raw=true",
+        "translate-api": "https://github.com/SimonAlexPaul/badger-executioner/blob/main/translate-api/release/v0_0_1.tar.gz?raw=true"
+    }
+}
