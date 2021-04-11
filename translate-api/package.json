@@ -14,6 +14,6 @@
         "url": "https://github.com/SimonAlexPaul/badger-executioner"
     },
     "dependencies": {
-        "badger-executioner": "https://github.com/SimonAlexPaul/badger-executioner/blob/main/badger-executioner/release/v0_0_1.tar.gz?raw=true"
+        "badger-executioner": "https://github.com/SimonAlexPaul/badger-executioner/blob/main/badger-executioner/release/latest.tar.gz?raw=true"
     }
 }
