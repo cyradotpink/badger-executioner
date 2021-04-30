@@ -36,7 +36,10 @@ of a french accent, and save the resulting mp3 as a file using `fs`:
 var functionId = 'jQ1olc'
 var payload = ['le french has arrived', 'fr', null, 'null']
 batchExecuter.executeOne(functionId, payload).then(returnValue => {
-    fs.writeFile('french.mp3', Buffer.from(returnValue[0], 'base64'), () => {})
+    fs.promises.writeFile(
+        'french.mp3',
+        Buffer.from(returnValue[0], 'base64')
+    )
 })
 ```
 
@@ -56,7 +59,10 @@ var functionCalls = [
 ]
 batchExecuter.execute(functionCalls).then(results => {
     results.forEach(result => {
-        fs.writeFile(`fortnite${result.index}.mp3`, Buffer.from(result.returnValue[0], 'base64'), () => {})
+        fs.promises.writeFile(
+            `fortnite${result.index}.mp3`,
+            Buffer.from(result.returnValue[0], 'base64'
+        )
     })
 })
 ```
