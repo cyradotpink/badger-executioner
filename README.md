@@ -25,7 +25,7 @@ const BatchExecuter = require('badger-executioner')
 const batchExecuter = new BatchExecuter('translate.google.com')
 ```
 
-The class has two instance functions, `execute` and `executeOne`.\
+The class has two instance methods, `execute` and `executeOne`.\
 `executeOne` is the simplest way to use this module and takes two arguments,
 the function ID and the non-serialised JSON payload. It returns a promise which resolves to the return value of the execution.\
 In this example,
@@ -43,7 +43,7 @@ batchExecuter.executeOne(functionId, payload).then(returnValue => {
 })
 ```
 
-To leverage batchexecute's ability to execute multiple things in a single request, you may use the `execute` function.\
+To leverage batchexecute's ability to execute multiple things in a single request, you may use the `execute` method.\
 It takes one argument, an array of arrays, where those arrays are pairs of function IDs and payloads. The returned promise resolves to an array of objects
 with the keys `index`, `functionId`, `payload` and `returnValue`, where `index` just reflects the index of the function call in the originally passed-in array
 that the result belongs to, `functionId` and `payload` are the function ID and payload that produced the result, and `returnValue` is the actual returned value from the API.\
@@ -52,7 +52,7 @@ The following example
 is similar to the last, but it text-to-speaks the string `"FORTNITE FAILS & Epic Wins! #178​ (Fortnite Battle Royale Funny Moments)"` in both a German and an Italian accent. (And saves both resulting mp3s)
 ```js
 var functionId = 'jQ1olc'
-var textToSpeak = 'FORTNITE FAILS & Epic Wins! #178​ (Fortnite Battle Royale Funny Moments)'
+var textToSpeak = 'FORTNITE FAILS & Epic Wins! #178 (Fortnite Battle Royale Funny Moments)'
 var functionCalls = [
     [functionId, [textToSpeak, 'de', null, 'null']],
     [functionId, [textToSpeak, 'it', null, 'null']]
