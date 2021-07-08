@@ -19,11 +19,11 @@ The following snippet asynchronously translates the string `"hello"` from Englis
 translateApi.getTranslation('hello', 'en', 'fr').then(res => console.log(res.translation))
 ```
 You can do multiple things in a single request by using TranslateApi's `multiExec` function.\
-By default, all instance functions that directly represent a functionality of Google Translate -
+By default, all instance methods that directly represent a functionality of Google Translate -
 currently, that's `getTts` and `getTranslation` - return a promise
 resolving to some result, as showcased in the above snippet.\
 This default behaviour is controlled by the instance field `defaultNoExec`, which is normally `false` and may be set to `true`,
-but can also be overruled using the functions' optional last argument. For demonstration purposes, we will be doing both in the next snippet.\
+but can also be overruled using each method's optional last argument. For demonstration purposes, we will be doing both in the next snippet.\
 Importantly, when `noExec` is `true` - either because the default was changed or because it was overruled - the return value may be passed to `multiExec` to be executed in a batch together with other executions. Specifically, `multiExec` expects an array of such values.\
 The following snippet translates the string `"hello"` from English to French and Italian.
 ```js
