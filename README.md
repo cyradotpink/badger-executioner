@@ -6,7 +6,7 @@ I made this for fun, but it seemed useful enough to have its own Github reposito
 Ryan Kovatch's Medium post
 ["Deciphering Google’s mysterious ‘batchexecute’ system"](https://kovatch.medium.com/deciphering-google-batchexecute-74991e4e446c)
 saved me _a lot_ of time making this, and if you're here I assume you probably already know how batchexecute works, but if you don't, I really do
-recommend reading it. Batchexecute is not intuitive to use for humans.\
+recommend reading it. This module probably won't make much sense to you otherwise.\
 \
 This readme describes the `badger-executioner` module itself. This repository also contains the module `translate-api`, which itself _uses_ Badger Executioner
 to provide a straight-forward way to interact with Google Translate programmatically. `translate-api` is described [here](/translate-api/README.md).
