@@ -5,7 +5,7 @@ This may or may not actually be useful to anyone.
 
 ### Installation
 ```
-npm install --save https://github.com/SimonAlexPaul/badger-executioner/blob/main/translate-api/release/latest.tar.gz?raw=true
+npm install --save https://github.com/cyradotpink/badger-executioner/blob/main/translate-api/release/latest.tar.gz?raw=true
 ```
 ### Usage
 The translate-api module exports the class TranslateApi.\
