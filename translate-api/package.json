@@ -7,13 +7,13 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "makearchive": "./makearchive.sh"
     },
-    "author": "Simon Paul",
+    "author": "cyradotpink",
     "license": "ISC",
     "repository": {
         "type": "git",
-        "url": "https://github.com/SimonAlexPaul/badger-executioner"
+        "url": "https://github.com/cyradotpink/badger-executioner"
     },
     "dependencies": {
-        "badger-executioner": "https://github.com/SimonAlexPaul/badger-executioner/blob/main/badger-executioner/release/latest.tar.gz?raw=true"
+        "badger-executioner": "https://github.com/cyradotpink/badger-executioner/blob/main/badger-executioner/release/latest.tar.gz?raw=true"
     }
 }
