@@ -13,7 +13,7 @@ to provide a straight-forward way to interact with Google Translate programmatic
 
 ### Installation
 ```
-npm install --save https://github.com/SimonAlexPaul/badger-executioner/blob/main/badger-executioner/release/latest.tar.gz?raw=true
+npm install --save https://github.com/cyradotpink/badger-executioner/blob/main/badger-executioner/release/latest.tar.gz?raw=true
 ```
 ### Usage
 The badger-executioner module exports the class BatchExecuter.\
