@@ -1,20 +1,18 @@
-## Badger Executioner: A small node module for interacting with Google batchexecute apps
+## Badger Executioner
 
 ### Notes
-I made this for fun, but it seemed useful enough to have its own Github repository.\
-\
+
+This is not a well-designed node module. It is not maintained. I was playing around with batchexecute (in 2021!) and this was the result.
+Feel free to copy and paste code from this repository if it's useful to you, just be aware that you will probably have to modify
+things to fit your needs, and maybe even just to make it work.
+
 Ryan Kovatch's Medium post
 ["Deciphering Google’s mysterious ‘batchexecute’ system"](https://kovatch.medium.com/deciphering-google-batchexecute-74991e4e446c)
-saved me _a lot_ of time making this, and if you're here I assume you probably already know how batchexecute works, but if you don't, I really do
-recommend reading it. This module probably won't make much sense to you otherwise.\
-\
+is a great resource for learning about batchexecute.
+
 This readme describes the `badger-executioner` module itself. This repository also contains the module `translate-api`, which itself _uses_ Badger Executioner
 to provide a straight-forward way to interact with Google Translate programmatically. `translate-api` is described [here](/translate-api/README.md).
 
-### Installation
-```
-npm install --save https://github.com/cyradotpink/badger-executioner/blob/main/badger-executioner/release/latest.tar.gz?raw=true
-```
 ### Usage
 The badger-executioner module exports the class BatchExecuter.\
 Its constructor takes one argument, the host domain of the Google app on which you want to execute.\
@@ -61,7 +59,7 @@ batchExecuter.execute(functionCalls).then(results => {
     results.forEach(result => {
         fs.promises.writeFile(
             `fortnite${result.index}.mp3`,
-            Buffer.from(result.returnValue[0], 'base64'
+            Buffer.from(result.returnValue[0], 'base64')
         )
     })
 })

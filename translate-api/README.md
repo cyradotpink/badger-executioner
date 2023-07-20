@@ -3,10 +3,6 @@
 This module provides a very simple way to use Google Translate's translation and text-to-speech features programmatically.\
 This may or may not actually be useful to anyone.
 
-### Installation
-```
-npm install --save https://github.com/cyradotpink/badger-executioner/blob/main/translate-api/release/latest.tar.gz?raw=true
-```
 ### Usage
 The translate-api module exports the class TranslateApi.\
 Note that, when an instance is initialised, it makes one request to Google Translate to retrieve some information required to execute functions, so make sure to re-use your instances.
